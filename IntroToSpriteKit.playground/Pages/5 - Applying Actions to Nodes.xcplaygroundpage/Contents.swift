@@ -54,6 +54,7 @@ circle4.physicsBody = SKPhysicsBody(circleOfRadius: circle4.size.width * 0.5)
 scene.addChild(circle4)
 
 
+
 /*:
  ### Assigning actions and sequences
  
@@ -109,22 +110,22 @@ let actionUpwardsMovement = SKAction.move(by: upThisMuch, duration: 0.5)
  
  */
 
-//// 1. Make the first circle move up immediately (runs a single action, once)
-//circle1.run(actionUpwardsMovement)
+// 1. Make the first circle move up immediately (runs a single action, once)
+circle1.run(actionUpwardsMovement)
 
-//// Define a sequence that involves a:
-//// * five second wait
-//// * moving upward
-//let actionShortWaitThenMoveUp = SKAction.sequence([actionFiveSecondWait, actionUpwardsMovement])
+// Define a sequence that involves a:
+// * five second wait
+// * moving upward
+let actionShortWaitThenMoveUp = SKAction.sequence([actionFiveSecondWait, actionUpwardsMovement])
 
-//// 2. Make the second circle wait for five seconds, then move up
-//circle2.run(actionShortWaitThenMoveUp)
+// 2. Make the second circle wait for five seconds, then move up
+circle2.run(actionShortWaitThenMoveUp)
 
-//// Define a sequence that involves a:
-//// * five second wait
-//// * another five second wait
-//// * moving upward
-//let actionLongerWaitThenMoveUp = SKAction.sequence([actionFiveSecondWait, actionFiveSecondWait, actionUpwardsMovement])
+// Define a sequence that involves a:
+// * five second wait
+// * another five second wait
+// * moving upward
+let actionLongerWaitThenMoveUp = SKAction.sequence([actionFiveSecondWait, actionFiveSecondWait, actionUpwardsMovement])
 
 //// 3. Make the third circle wait for 10 seconds, then move up
 //circle3.run(actionLongerWaitThenMoveUp)
