@@ -87,7 +87,7 @@ scene.addChild(circle4)
  */
 
 // Define an action that causes a node to wait (do nothing)
-let actionFiveSecondWait = SKAction.wait(forDuration: 5.0)
+let actionTwentySecondWait = SKAction.wait(forDuration: 20.0)
 
 // Define a vector that describes an upward movement
 let upThisMuch = CGVector(dx: 0, dy: 250)
@@ -176,19 +176,27 @@ let actionUpwardsMovement = SKAction.move(by: upThisMuch, duration: 0.5)
  
  */
 
-// Exercise 1: Write your code below.
+// Exercise 1: Write your code below. *edited the five second wait action defined above to twenty seconds*
 let rightThisMuch = CGVector(dx: 200, dy: 0)
 let actionMoveRight = SKAction.move(by: rightThisMuch, duration: 0.5)
-let actionWaitThenMoveRight = SKAction.sequence ([actionFiveSecondWait, actionFiveSecondWait, actionFiveSecondWait, actionFiveSecondWait, actionMoveRight])
+let actionWaitThenMoveRight = SKAction.sequence ([actionTwentySecondWait, actionMoveRight])
 circle1.run(actionWaitThenMoveRight)
 
 // Exercise 2: Write your code below.
 let upAndLeft = CGVector(dx: -200, dy: 200)
 let actionMoveUpAndLeft = SKAction.move(by: upAndLeft, duration: 2)
+let actionWaitAndMove = SKAction.sequence ([actionTwentySecondWait, actionMoveUpAndLeft])
 circle2.physicsBody?.affectedByGravity = false
-circle2.run(actionMoveUpAndLeft)
+circle2.run(actionWaitAndMove)
 
 // Exercise 3: Write your code below.
+let actionBigger = SKAction.scale(by: 3.0, duration: 0.5)
+let moveUpAndRight = CGVector(dx: 400, dy: 320)
+let actionMoveThisMuch = SKAction.move(by: moveUpAndRight, duration: 0.5)
+let actionRotate = SKAction.rotate(byAngle: 5.0, duration: 0.5)
+circle3.physicsBody?.affectedByGravity = false
+let goCrazy = SKAction.sequence([actionBigger, actionMoveThisMuch, actionRotate])
+circle3.run(goCrazy)
 
 
 /*:
